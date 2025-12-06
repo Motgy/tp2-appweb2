@@ -1,0 +1,66 @@
+.bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.soap-bubble {
+    position: absolute;
+    border-radius: 50%;
+    top: -150px; 
+
+    background: radial-gradient(
+        120% 120% at 30% 30%, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.01) 50%, 
+        transparent 100%
+    );
+    
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.2),
+        inset 10px 0 40px rgba(255, 0, 255, 0.15), 
+        inset -10px -20px 40px rgba(0, 255, 255, 0.15), 
+        0 10px 20px rgba(0, 0, 0, 0.05); 
+
+    backdrop-filter: blur(2px); 
+    animation: floatDown linear forwards;
+}
+
+.soap-bubble::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 22%;
+    width: 25%;
+    height: 12%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(2px);
+    transform: rotate(-45deg);
+}
+
+@keyframes floatDown {
+    0% {
+        top: -150px;
+        transform: translateX(0) scale(var(--scale));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(var(--drift)) scale(var(--scale));
+    }
+    100% {
+        top: 110vh;
+        transform: translateX(calc(var(--drift) * -1)) scale(var(--scale));
+        opacity: 0;
+    }
+}
