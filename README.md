@@ -33,12 +33,6 @@ La plateforme offre deux rôles distincts avec des interfaces dédiées :
 * IA : OpenAI API (Modèle `gpt-4o-mini`).
 * Génération PDF : Bibliothèque `jsPDF`.
 
-## 📋 Prérequis
-
-Avant de commencer, assurez-vous d'avoir installé :
-* Node.js (Version 18 ou supérieure recommandée).
-* Git.
-* Un compte Google (pour la création du projet Firebase).
 
 ## ⚙️ Instructions d'Installation
 
@@ -54,17 +48,6 @@ cd functions
 npm install  
 cd ..
 
-### 4. Configuration de l'environnement (Clés API)
-
-Ce projet nécessite une clé API OpenAI pour le service de validation.
-
-1. Allez dans le dossier `functions/`.  
-2. Créez un fichier nommé `.env`.  
-3. Ajoutez votre clé API OpenAI dans ce fichier :
-
-OPENAI_API_KEY=sk-votre-cle-api-openai-ici
-
-*Note : Le fichier `src/firebase.js` contient déjà la configuration Firebase publique du projet étudiant. Pour un déploiement personnel, remplacez ces valeurs par celles de votre propre projet Firebase.*
 
 ## 💻 Démarrage en Local
 
